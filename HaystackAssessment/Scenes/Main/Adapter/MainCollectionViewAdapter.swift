@@ -18,7 +18,7 @@ final class MainCollectionViewAdapter: NSObject, UICollectionViewDataSource {
         }
     }
     var photo: Photo?
-    var title: String = "Treneding Now on Flickr"
+    var title: String = "Trending Now on Flickr"
 
     // MARK: - Init Method
 
