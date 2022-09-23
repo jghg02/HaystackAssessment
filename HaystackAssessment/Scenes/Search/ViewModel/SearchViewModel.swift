@@ -1,27 +1,26 @@
 //
-//  MainViewModel.swift
+//  SearchViewModel.swift
 //  HaystackAssessment
 //
-//  Created by Josue Hernandez on 09-09-22.
+//  Created by Josue Hernandez on 20-09-22.
 //
 
-import Foundation
+import UIKit
 import JNetworking
 
-class MainViewModel {
+class SearchViewModel {
 
     // MARK: - Properties
 
     var allResults = [Resource?]()
-    var data: DataBiding<[Resource?]> = DataBiding([])
+    var searchData: DataBiding<[Resource?]> = DataBiding([])
     var photos: DataBiding<Photo?> = DataBiding(nil)
-    var showLoading: DataBiding<Bool> = DataBiding(false)
-    var error: DataBiding<Bool> = DataBiding(false)
+
 
     // MARK: - Methods
 
-    func fetchPhotos() {
-        let url = APIRequest.baseURL + APIRequest.photos + APIRequest.queryParams
+    func searchRequest(with text: String) {
+        let url = (APIRequest.baseURL + APIRequest.photos + APIRequest.search).replacingOccurrences(of: "{QUERY-SEARCH}", with: text)
         let client = JNWebClient<Photo, JNEmpty>()
         let request = JNRequest(url: URL(string: url)!)
 
@@ -34,9 +33,9 @@ class MainViewModel {
                 self.photos.value = data.value
             case .failure(let error):
                 print(error.errorDescription!)
-                self.error.value = true
             }
         }
+
     }
 
     func fetchResources(with id: String?) {
@@ -46,19 +45,39 @@ class MainViewModel {
         let client = JNWebClient<Resource, JNEmpty>()
         let request = JNRequest(url: URL(string: url)!)
 
+        // remove all data to refresh the information
+        self.allResults = []
+
         client.request(request: request) { [weak self] data in
             switch data {
             case .success(let data):
                 self?.allResults.append(data.value)
                 if self?.allResults.count == 30 {
-                    self?.data.value = self!.allResults
-                    self?.showLoading.value = true
+                    self?.searchData.value = self!.allResults
                 }
             case .failure(let error):
                 print(error.errorDescription!)
-                self?.error.value = true
             }
         }
     }
 
+
+    func goToShowSearchResult(searchText: String?, tabBar: UITabBarController?) {
+
+        guard let searchText = searchText, let tabBar = tabBar else { return }
+        searchRequest(with: searchText)
+
+        // Get an instance for ViewController
+        let navigationBar = tabBar.viewControllers?.first as? UINavigationController
+        let viewController = navigationBar?.viewControllers.first as? MainViewController
+        viewController?.searchFlag = true
+        viewController?.searchViewModel = self
+        viewController?.titleHeader = "Search Results for " + searchText
+
+
+        // Go to Feed tarBar
+        tabBar.selectedIndex = 0
+
+    }
+    
 }

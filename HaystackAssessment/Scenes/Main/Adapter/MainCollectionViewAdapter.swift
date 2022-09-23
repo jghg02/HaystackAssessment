@@ -18,6 +18,7 @@ final class MainCollectionViewAdapter: NSObject, UICollectionViewDataSource {
         }
     }
     var photo: Photo?
+    var title: String = "Treneding Now on Flickr"
 
     // MARK: - Init Method
 
@@ -25,8 +26,10 @@ final class MainCollectionViewAdapter: NSObject, UICollectionViewDataSource {
         self.collectionView = collectionView
         super.init()
 
-        // Cell
+        // Regsiter Cell
         self.collectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
+        // Register Header
+        self.collectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView")
 
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -43,6 +46,12 @@ final class MainCollectionViewAdapter: NSObject, UICollectionViewDataSource {
         guard let cell = cell as? ImageCell else { return UICollectionViewCell() }
         cell.loadData(with: data[indexPath.row], title: photo?.photos.photo[indexPath.row]?.title)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView", for: indexPath) as? HeaderView
+        header?.setupTitle(with: title)
+        return header ?? UICollectionReusableView()
     }
 
 }
@@ -62,6 +71,9 @@ extension MainCollectionViewAdapter: UICollectionViewDelegate {
 extension MainCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 500, height: 400)
+    }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 100)
     }
 }

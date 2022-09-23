@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="19529" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GenericErrorView" customModule="HaystackAssessment" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="T1M-u4-3nD" id="CbA-zU-w5K"/>
+                <outlet property="containerView" destination="GtC-DI-cav" id="iCU-qv-rre"/>
+                <outlet property="imageView" destination="h2p-vq-Ybb" id="zJi-Qf-WxQ"/>
+                <outlet property="mainView" destination="iN0-l3-epB" id="jzv-TQ-0d4"/>
+                <outlet property="subtitleLabel" destination="Kv7-cx-C64" id="MlG-jM-kJv"/>
+                <outlet property="titleLabel" destination="Bkh-yc-VjV" id="0tX-35-cOw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-DI-cav">
+                    <rect key="frame" x="460" y="240" width="1000" height="600"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill.xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="h2p-vq-Ybb">
+                            <rect key="frame" x="300" y="95.5" width="400" height="247"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="400" id="QEV-Id-fxU"/>
+                                <constraint firstAttribute="height" constant="250" id="fHf-8E-Fy8"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-yc-VjV">
+                            <rect key="frame" x="175" y="352" width="650" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="650" id="SOe-eM-Z3m"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv7-cx-C64">
+                            <rect key="frame" x="175" y="362" width="650" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="650" id="sdw-ZX-AFw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1M-u4-3nD">
+                            <rect key="frame" x="300" y="512" width="400" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="aE8-ef-X68"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="large">
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didTapActionButton:" destination="-1" eventType="primaryActionTriggered" id="39C-Mj-X3o"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1000" id="Dwu-VY-B79"/>
+                        <constraint firstAttribute="bottom" secondItem="T1M-u4-3nD" secondAttribute="bottom" constant="8" id="E84-4h-I5L"/>
+                        <constraint firstItem="h2p-vq-Ybb" firstAttribute="centerX" secondItem="GtC-DI-cav" secondAttribute="centerX" id="HEF-Oo-oBF"/>
+                        <constraint firstItem="Bkh-yc-VjV" firstAttribute="top" secondItem="h2p-vq-Ybb" secondAttribute="bottom" constant="8" symbolic="YES" id="OTW-7b-kYC"/>
+                        <constraint firstItem="T1M-u4-3nD" firstAttribute="centerX" secondItem="GtC-DI-cav" secondAttribute="centerX" id="ZQf-lo-oeW"/>
+                        <constraint firstItem="Bkh-yc-VjV" firstAttribute="centerX" secondItem="GtC-DI-cav" secondAttribute="centerX" id="Zgo-RL-i57"/>
+                        <constraint firstItem="T1M-u4-3nD" firstAttribute="trailing" secondItem="h2p-vq-Ybb" secondAttribute="trailing" id="eV0-eX-gk8"/>
+                        <constraint firstAttribute="height" constant="600" id="oPz-Bs-Jxb"/>
+                        <constraint firstItem="h2p-vq-Ybb" firstAttribute="top" secondItem="GtC-DI-cav" secondAttribute="top" constant="94" id="rEk-g3-F0q"/>
+                        <constraint firstItem="T1M-u4-3nD" firstAttribute="leading" secondItem="h2p-vq-Ybb" secondAttribute="leading" id="tXD-t4-jFy"/>
+                        <constraint firstItem="Kv7-cx-C64" firstAttribute="centerX" secondItem="GtC-DI-cav" secondAttribute="centerX" id="v27-hI-vNE"/>
+                        <constraint firstItem="Kv7-cx-C64" firstAttribute="top" secondItem="Bkh-yc-VjV" secondAttribute="bottom" constant="10" id="vi1-Uc-vBv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
+            <constraints>
+                <constraint firstItem="GtC-DI-cav" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FrD-bJ-XKU"/>
+                <constraint firstItem="GtC-DI-cav" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Hzc-au-Ec7"/>
+            </constraints>
+            <point key="canvasLocation" x="185" y="34"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.fill.xmark" catalog="system" width="128" height="87"/>
+    </resources>
+</document>

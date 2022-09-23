@@ -14,7 +14,7 @@ class ResultView: UIView {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     // MARK: - Properties
 
     let nibName = "ResultView"

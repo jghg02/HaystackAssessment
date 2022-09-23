@@ -105,8 +105,7 @@ class TabCoordinator: NSObject, Coordinator {
         case .feed:
             navController.pushViewController(MainViewController(), animated: true)
         case .search:
-            break
-//            navController.pushViewController(MapViewController(), animated: true)
+            navController.pushViewController(SearchViewController(), animated: true)
         }
 
         return navController
