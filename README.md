@@ -3,6 +3,17 @@
 ## Description 
 This repo contains the proposed solution for the ios challenge. 
 
+## Images
+
+| Init View  | Search View   |  Search View  | Result View  | Error View |
+|---|---|---|---| ---|
+| ![Simulator Screen Shot - Apple TV 4K (at 1080p) (2nd generation) - 2022-09-22 at 21 10 09](https://user-images.githubusercontent.com/1470487/191872049-055db8b1-57de-4e16-988c-12843785dbaf.png)  | ![Simulator Screen Shot - Apple TV 4K (at 1080p) (2nd generation) - 2022-09-22 at 21 10 14](https://user-images.githubusercontent.com/1470487/191872076-55fc4b6a-72a0-4ba2-9d81-6370edcdb4ca.png)  | ![Simulator Screen Shot - Apple TV 4K (at 1080p) (2nd generation) - 2022-09-22 at 21 10 26](https://user-images.githubusercontent.com/1470487/191872097-00583a84-2e86-48e6-9c77-261616ce8e9b.png)  | ![Simulator Screen Shot - Apple TV 4K (at 1080p) (2nd generation) - 2022-09-22 at 21 10 32](https://user-images.githubusercontent.com/1470487/191872133-cbe2b742-aaf7-4199-876e-a16f60374acc.png)  | ![Simulator Screen Shot - Apple TV 4K (at 1080p) (2nd generation) - 2022-09-22 at 21 16 47](https://user-images.githubusercontent.com/1470487/191872327-6cf10477-b2bb-46c1-8b35-638e27d6dd34.png) |
+
+
+## Video
+
+https://user-images.githubusercontent.com/1470487/191872420-45500950-e5ba-46f0-89a6-38066dcb2745.mp4
+
 
 ## Design patterns. 
 
